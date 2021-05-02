@@ -43,10 +43,10 @@
                     {{this.rating}}
                     <i class="fas fa-star fa-xs"></i>
                 </span>
-                <div>
-                    <a href="/restaurants/{{this._id}}/edit"><button>修改</button></a>
+                <div class="reviseBtn">
+                    <a href="/restaurants/{{this._id}}/edit"><button class="reviseColor">修改</button></a>
                     <form action="/restaurants/{{this._id}}/delete" method="POST" style="display: inline;">
-                        <button type="submit">刪除</button>
+                        <button class="deleteColor" type="submit">刪除</button>
                     </form>
                 </div>
             </div>
