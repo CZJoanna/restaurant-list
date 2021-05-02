@@ -49,7 +49,6 @@ app.get("/restaurants/:id", (req, res) => {
   return Rest.findById(id)
     .lean()
     .then((restaurant) => {
-      console.log(restaurant);
       res.render("show", { restaurant });
     })
     .catch((error) => console.log(error));
@@ -60,7 +59,6 @@ app.get("/restaurants/:id/edit", (req, res) => {
   Rest.findById(id)
     .lean()
     .then((restaurant) => {
-      console.log(restaurant);
       res.render("edit", { restaurant });
     });
 });
