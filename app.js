@@ -1,8 +1,11 @@
+// 引入模組及檔案
 const Rest = require("./models/rest");
 const express = require("express");
 const exphbs = require("express-handlebars");
 const bodyParser = require("body-parser");
-const mongoose = require("mongoose");
+require("./config/mongoose");
+
+// 掛載伺服器
 const app = express();
 
 // 用 app.use 規定每一筆請求都需要透過 body-parser 進行前置處理
@@ -14,20 +17,7 @@ app.listen(3000, () => {
   console.log("Express is running on http://localhost:3000");
 });
 
-//資料庫相關設定
-mongoose.connect("mongodb://localhost/restaurant-list", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
 
-const db = mongoose.connection;
-db.on("error", () => {
-  console.log("mongodb error");
-});
-
-db.once("open", () => {
-  console.log("mongodb connected!");
-});
 
 //首頁
 app.get("/", (req, res) => {
