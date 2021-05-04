@@ -5,7 +5,7 @@
         <div class="card-body">
           <h3 class="card-title text-center">修改餐廳</h3>
           <hr>
-          <form method="POST" action="/restaurants/{{restaurant._id}}/edit">
+          <form method="POST" action="/restaurants/{{restaurant._id}}?_method=PUT">
             {{!-- name --}}
             <div class="form-group form-row">
               <label for="name" class="col-md-4 col-form-label">
