@@ -122,6 +122,56 @@ header {
   background-color: rgb(61, 35, 35);
 }
 
+.container
+{
+	margin-top: 50px;
+}
+
+.title
+    {
+        color: #4F4F4F;
+        font-weight: bold;
+    }
+
+
+    .select-btn-streaming
+    {   
+        width: 100%;
+        max-width: 30% !important;
+        border: 1px solid #969090;
+        box-sizing: border-box;
+        border-radius: 4px;
+    }
+
+    select 
+    {
+        padding: 0.8em 0.5em;
+        width: 100%;
+    }
+
+    /* Register */
+    .button_register input
+    {
+        display: block;
+        margin-top:  20px;
+        width: 100%;
+        max-width: 30% !important;
+        height: 50px;
+        background-color: #D91B1B;
+        color: white;
+        border:0px;
+        /* Style Text button */
+        font-size: 18px;
+        font-weight: bold;
+    } 
+    
+    .dropDownArea {
+      width:200px;
+      margin-left: 65vw;
+      padding-top:20px
+      
+    }
+
 @media screen and (max-width: 992px) {
   .card img {
     height: 115px;
@@ -134,5 +184,8 @@ header {
   }
   .card img {
     height: auto;
+  }
+  .dropDownArea {
+    margin-left: 45vw;    
   }
 }

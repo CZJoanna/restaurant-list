@@ -18,7 +18,15 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 // 設定每一筆請求都會透過 methodOverride 進行前置處理
 app.use(methodOverride("_method"));
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+
+const helper = exphbs.create({
+  defaultlayout: 'main',
+  helpers: {
+    eq: function (v1, v2) { return (v1 === v2) }
+  }
+})
+
+app.engine("handlebars", helper.engine);
 app.set("view engine", "handlebars");
 
 // 將 request 導入路由器

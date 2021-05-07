@@ -16,6 +16,19 @@
         </div>
     </div>
 </div>
+
+<div class="dropDownArea">
+    <form action="/sort" method="GET">
+        <select name="sort" class="form-control btn-outline-secondary " id="seletedType" onchange="this.form.submit()">
+            <option value="" disabled selected>餐廳分類排序</option>
+            <option value="name" {{#if (eq sort "name" )}}selected{{/if}}>名稱：Ａ -> Ｚ</option>
+            <option value="-name" {{#if (eq sort "-name" )}}selected{{/if}}>名稱：Ｚ -> Ａ</option>
+            <option value="-rating" {{#if (eq sort "-rating" )}}selected{{/if}}>評分：高 -> 低</option>
+            <option value="rating" {{#if (eq sort "rating" )}}selected{{/if}}>評分：低 -> 高</option>
+        </select>
+    </form>
+</div>
+
 <div class="newBtnArea">
     <a href="/restaurants/new"><button>新增餐廳</button></a>
 </div>
@@ -48,8 +61,8 @@
                     <form action="/restaurants/{{this._id}}?_method=DELETE" method="POST" style="display: inline;">
                         <button onclick="deleteText()" class="deleteColor" type="submit">刪除</button>
                         <script>
-                            function deleteText() { 
-                                alert ("this restaurant has been deleted !")
+                            function deleteText() {
+                                alert("this restaurant has been deleted !")
                             }
                         </script>
                     </form>
